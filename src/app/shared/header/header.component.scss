@@ -1,0 +1,26 @@
+nav {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+  }
+
+  .nav-item a {
+    color: white;
+
+    :hover {
+      color: white !important;
+    }
+  }
+
+  .dropdown-menu a {
+    color: black;
+  }
+
+  .navbar-brand {
+    color: white;
+  }
+
+  .searchbar .form-control {
+    border-radius: 0;
+  }
+}
