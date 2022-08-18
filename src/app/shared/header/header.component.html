@@ -1,68 +1,43 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-primary">
-  <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <form class="d-flex searchbar" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Login
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Become a Seller</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            More
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
-        </li>
-      </ul>
-    </div>
+<header id="header">
+  <div class="container">
+      <div class="row">
+          <div class="head-left">
+              <div class="logo logobox">
+                  <a href="#">
+                      <img src="assets/flipkartlogo.png" alt="logo" class="loimg">
+                  </a>
+                  <a href="#" class="sublogo">
+                      Explore
+                      <span>Plus</span>
+                      <img src="assets/plus_b13a8b.png" alt="logo">
+                  </a>
+              </div>
+              <div class="logo logobox1">
+                  <a href="#">
+                      <img src="assets/flipkartlogo.png" alt="logo" class="loimg">
+                  </a>
+              </div>
+              <div class="search searchbox">
+                  <input type="text" placeholder="Search for products, brands and more" id="search12">
+                  <button class="btn" id="searchbtn"><i class="fas fa-search"></i></button>
+              </div>
+
+          </div>
+          <div class="head-right">
+              <div class="tex-rig">
+                  <div class="text-rig1">
+                      <a href="#">Login & Signup</a>
+                  </div>
+                  <div class="text-rig1 text-rig2">
+                      <a href="cart.html" class="cartbtn"><i class="fas fa-shopping-cart"></i> cart</a>
+                      <span id="counter" class="count">0</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="search searchbox1">
+          <input type="text" placeholder="Search for products, brands and more" id="search13">
+          <button class="btn" id="searchbtn1"><i class="fas fa-search"></i></button>
+      </div>
   </div>
-</nav>
+</header>
