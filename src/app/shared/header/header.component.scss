@@ -4,8 +4,13 @@ nav {
     margin-top: 0; // remove the gap so it doesn't close
   }
 
+  .login-li .dropdown-toggle::after {
+    display: none;
+  }
+
   .nav-item a {
     color: white;
+    font-weight: 550;
 
     :hover {
       color: white !important;
@@ -18,9 +23,41 @@ nav {
 
   .navbar-brand {
     color: white;
+    font-family: "Pacifico", cursive;
   }
 
   .searchbar .form-control {
     border-radius: 0;
+    height: 2em;
+
+    width: 32em;
+    margin-top: 0.15em;
+    border: black;
+
+    &::placeholder {
+      font-size: 0.79rem;
+      padding-left: 0.2rem;
+    }
+  }
+
+  .main-nav {
+    li {
+      margin-left: 3%;
+      min-width: max-content;
+    }
+
+    .login-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(24, 53, 201);
+      font-weight: 500;
+      width: 8em;
+
+      height: 2em;
+      margin-top: 0.3em;
+
+      background-color: white;
+    }
   }
 }

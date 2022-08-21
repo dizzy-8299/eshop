@@ -1,5 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-primary">
+<nav class="navbar sticky-top navbar-expand-lg bg-primary">
   <div class="container-fluid">
+    <!-- toggle nav on small devices -->
     <button
       class="navbar-toggler"
       type="button"
@@ -11,24 +12,29 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- navbar -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-        <a class="navbar-brand" href="#">Navbar</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto main-nav">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">Eshop</a>
+        <!-- SearchBar -->
         <form class="d-flex searchbar" role="search">
           <input
             class="form-control me-2"
             type="search"
-            placeholder="Search"
+            placeholder="Search for products, brands and more"
             aria-label="Search"
           />
         </form>
-        <li class="nav-item dropdown">
+        <!-- Login Button -->
+        <li class="nav-item dropdown login-li">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle login-btn"
             href="#"
             role="button"
-            data-bs-toggle="dropdown"
             aria-expanded="false"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
           >
             Login
           </a>
@@ -39,9 +45,47 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+
+        <!-- Login Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">...</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Become Seller -->
         <li class="nav-item">
           <a class="nav-link" href="#">Become a Seller</a>
         </li>
+        <!-- More Options -->
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -59,6 +103,7 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+        <!-- Cart -->
         <li class="nav-item">
           <a class="nav-link" href="#">Cart</a>
         </li>
