@@ -1,7 +1,23 @@
 <div class="home-wrapper">
+  <!--Header Card-->
+  <section class="p-3 shadow-sm p-3 mb-2 bg-body rounded">
+    <div
+      class="container header d-flex justify-content-center align-items-center"
+    >
+      <div class="items ms-5" *ngFor="let item of headerArr">
+        <a
+          ><li>
+            <img class="header-item__img" [src]="item.img" alt="" />
+            <p class="header-item__titles">{{ item.title }}</p>
+          </li></a
+        >
+      </div>
+    </div>
+  </section>
+  <!--Carousel-->
   <div
     id="carouselExampleInterval"
-    class="carousel slide banner"
+    class="carousel slide banner col-10 mx-auto"
     data-bs-ride="carousel"
   >
     <div class="carousel-inner">
@@ -46,4 +62,36 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <!--Card Slider-->
+  <section class="product col-10 mx-auto">
+    <div class="container-fluid" style="padding: 0">
+      <div class="slider-wrap">
+        <div class="slider-main" #slide>
+          <div class="item" *ngFor="let item of listarr">
+            <div class="text">{{ item.title }}</div>
+            <!-- <div class="pimage">
+              <img
+                src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
+                alt=""
+              />
+            </div>
+            <div class="pinfo">
+              <h4>
+                Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor
+                (LC49HG90DMNXZA) – Super Ultrawide Screen QLED
+              </h4>
+            </div> -->
+          </div>
+        </div>
+        <div class="btn-area">
+          <button type="button" class="prev" *ngIf="k != 0" (click)="prev()">
+            Prev
+          </button>
+          <button type="button" class="next" *ngIf="j != 0" (click)="next()">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

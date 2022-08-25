@@ -35,14 +35,28 @@
             aria-expanded="false"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
+            *ngIf="!isUserLoggedIn"
           >
             Login
           </a>
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            *ngIf="isUserLoggedIn"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ user.firstName }}&nbsp;{{ user.lastName }}
+          </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/signup']">Profile</a>
+            </li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
           </ul>
         </li>
 
@@ -50,31 +64,48 @@
         <div
           class="modal fade"
           id="exampleModal"
+          tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h4
+                  class="modal-title text-center m-auto"
+                  style="color: black; text-align: center"
+                  id="exampleModalLabel"
+                >
+                  {{ actionType }}
+                </h4>
                 <button
                   type="button"
                   class="btn-close"
+                  style="margin: 0"
+                  #buttonClose
                   data-bs-dismiss="modal"
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body">...</div>
+              <div class="modal-body">
+                <app-signin
+                  *ngIf="actionType == 'SignIn'"
+                  (signInCompleted)="signInHandler($event)"
+                ></app-signin>
+                <app-signup
+                  *ngIf="actionType == 'SignUp'"
+                  [actionName]="'SignUp'"
+                  (signUpCompleted)="signUpHandler($event)"
+                ></app-signup>
+              </div>
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
+                  class="btn btn-primary m-auto"
+                  *ngIf="actionType == 'SignIn'"
+                  (click)="handleAction()"
                 >
-                  Close
-                </button>
-                <button type="button" class="btn btn-primary">
-                  Save changes
+                  Sign Up
                 </button>
               </div>
             </div>
