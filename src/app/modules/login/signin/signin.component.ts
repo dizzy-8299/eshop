@@ -1,9 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/core/services/login/login.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -13,10 +9,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
-  signInForm!: UntypedFormGroup;
+  signInForm!: FormGroup;
   @Output() signInCompleted: EventEmitter<boolean> = new EventEmitter(false);
   constructor(
-    private fb: UntypedFormBuilder,
+    private fb: FormBuilder,
     private login: LoginService,
     private toaster: ToastrService
   ) {}

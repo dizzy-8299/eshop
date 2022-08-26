@@ -1,6 +1,9 @@
 import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/auth/auth.service';
+import { Product } from 'src/app/core/models/product';
+import { CartService } from 'src/app/core/services/cart/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +13,20 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 export class HeaderComponent implements OnInit {
   actionType: string = 'SignIn';
   isUserLoggedIn: boolean = false;
+  selectedItems: Observable<Product[]> | null = null;
   user: any;
   @ViewChild('buttonClose') closeButton: any;
   constructor(
     private authService: AuthService,
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private cart: CartService
   ) {}
 
   ngOnInit(): void {
     this.getUserDetails();
+
+    this.selectedItems = this.cart.selectItems;
   }
 
   handleAction() {

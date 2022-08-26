@@ -5,7 +5,7 @@
       class="container header d-flex justify-content-center align-items-center"
     >
       <div class="items ms-5" *ngFor="let item of headerArr">
-        <a
+        <a [routerLink]="['filter/', item.categoryid]"
           ><li>
             <img class="header-item__img" [src]="item.img" alt="" />
             <p class="header-item__titles">{{ item.title }}</p>
@@ -90,6 +90,39 @@
           <button type="button" class="next" *ngIf="j != 0" (click)="next()">
             Next
           </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-2">
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-sm-12 col-md-6 col-lg-4 mb-1"
+          *ngFor="let item of filteredProducts"
+        >
+          <div class="card" style="width: 18rem">
+            <img
+              src="{{ item.image }}"
+              class="card-img-top"
+              alt="..."
+              style="width: 50%; height: 50%"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}</h5>
+              <p
+                class="card-text"
+                style="white-space: nowrap; overflow: hidden"
+              >
+                {{ item.description }}
+              </p>
+              <p><strong>Price</strong> : ${{ item.price }}</p>
+              <a class="btn btn-primary" (click)="addToCart(item)"
+                >Add to Cart</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -8,6 +8,13 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  {
+    path: 'filter/:categoryid',
+    loadChildren: () =>
+      import('./modules/filter-page/filter-page.module').then(
+        (x) => x.FilterPageModule
+      ),
+  },
 ];
 
 @NgModule({
