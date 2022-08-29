@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-
 html,
 body {
   height: 100%;
@@ -25,8 +24,15 @@ a{
   text-decoration: none;
   color: white;
 }
+
+
+.modal-backdrop {
+  z-index: auto;
+}
+
 ul{
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
+
